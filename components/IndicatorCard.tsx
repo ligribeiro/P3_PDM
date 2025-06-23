@@ -28,6 +28,6 @@ const styles = StyleSheet.create({
   },
   valor: {
     fontSize: 20,
-    color: '#1E88E5',
+    color: '#6A1B9A',
   },
 });

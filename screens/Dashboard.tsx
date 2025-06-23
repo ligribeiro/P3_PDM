@@ -9,28 +9,38 @@ export default function Dashboard() {
   const [bpm, setBpm] = useState(0);
 
   useEffect(() => {
-    // Simula os dados de forma aleatória ao abrir o app
+    
     setPassos(Math.floor(Math.random() * 10000));
-    setSono(Number((Math.random() * 4 + 4).toFixed(1))); // entre 4h e 8h
-    setAgua(Number((Math.random() * 1.5 + 1.5).toFixed(1))); // entre 1.5L e 3L
-    setBpm(Math.floor(Math.random() * 40 + 60)); // entre 60 e 100 bpm
+    setSono(Number((Math.random() * 4 + 4).toFixed(1))); 
+    setAgua(Number((Math.random() * 1.5 + 1.5).toFixed(1))); 
+    setBpm(Math.floor(Math.random() * 40 + 60)); 
   }, []);
 
   return (
     <ScrollView style={{ padding: 20 }}>
-      <Text style={{ fontSize: 24, marginBottom: 20, fontWeight: 'bold' }}>
-        Minha Saúde Hoje
-      </Text>
+  <Text style={{
+  fontSize: 28,             
+  marginBottom: 20,
+  marginTop: 40,
+  fontWeight: '900',        
+  color: '#6A1B9A',         
+  textAlign: 'center'       
+}}>
+  Minha Saúde Hoje
+</Text>
 
-      <IndicatorCard titulo="Passos" valor={passos} />
-      <IndicatorCard titulo="Horas de Sono" valor={`${sono} h`} />
-      <IndicatorCard titulo="Hidratação" valor={`${agua} L`} />
-      <IndicatorCard titulo="Frequência Cardíaca" valor={`${bpm} bpm`} />
 
-      <Button
-        title="Ver mais informações"
-        onPress={() => Linking.openURL('https://www.minhavida.com.br/saude')}
-      />
+      <IndicatorCard titulo="🚶‍♀️ Passos" valor={passos} />
+      <IndicatorCard titulo="😴 Horas de Sono" valor={`${sono} h`} />
+      <IndicatorCard titulo="💧 Hidratação" valor={`${agua} L`} />
+      <IndicatorCard titulo="❤️ Frequência Cardíaca" valor={`${bpm} bpm`} />
+
+     <Button
+  title="Ver mais informações"
+  onPress={() => Linking.openURL('https://www.minhavida.com.br/saude')}
+  color="#6A1B9A"
+/>
+
     </ScrollView>
   );
 }
